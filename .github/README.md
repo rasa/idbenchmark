@@ -1,4 +1,4 @@
-# rasa/go-template
+# rasa/idbenchmark
 
 One paragraph of project description goes here
 
@@ -64,13 +64,13 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/rasa/go-template/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/rasa/idbenchmark/tags). 
 
 ## Authors
 
 * **Ross Smith II** - *Initial work* - [@rasa](https://github.com/rasa)
 
-See also the list of [contributors](https://github.com/rasa/go-template/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/rasa/idbenchmark/contributors) who participated in this project.
 
 ## License
 

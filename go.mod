@@ -1,1 +1,1 @@
-module github.com/rasa/go-template
+module github.com/rasa/idbenchmark

@@ -7,7 +7,7 @@ ENV GOPATH /go
 RUN	apk add --no-cache \
 	ca-certificates
 
-COPY . /go/src/github.com/rasa/go-template
+COPY . /go/src/github.com/rasa/idbenchmark
 
 RUN set -x \
 	&& apk add --no-cache --virtual .build-deps \
@@ -16,17 +16,17 @@ RUN set -x \
 		libc-dev \
 		libgcc \
 		make \
-	&& cd /go/src/github.com/rasa/go-template \
+	&& cd /go/src/github.com/rasa/idbenchmark \
 	&& make static \
-	&& mv go-template /usr/bin/go-template \
+	&& mv idbenchmark /usr/bin/idbenchmark \
 	&& apk del .build-deps \
 	&& rm -rf /go \
 	&& echo "Build complete."
 
 FROM alpine:latest
 
-COPY --from=builder /usr/bin/go-template /usr/bin/go-template
+COPY --from=builder /usr/bin/idbenchmark /usr/bin/idbenchmark
 COPY --from=builder /etc/ssl/certs/ /etc/ssl/certs
 
-ENTRYPOINT [ "go-template" ]
+ENTRYPOINT [ "idbenchmark" ]
 CMD [ "--help" ]
