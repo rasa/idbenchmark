@@ -1,0 +1,16 @@
+# .gitattributes
+* text=auto eol=lf
+
+# Files that Windows requires have CR/LF line endings:
+# .bat - DOS batch files
+*.[Bb][Aa][Tt] eol=crlf
+# .cmd - DOS batch files
+*.[Cc][Mm][Dd] eol=crlf
+# .dsp - Visual Studio 6 project files
+*.[Dd][Ss][Pp] eol=crlf
+# .dsw - Visual Studio 6 workspace files
+*.[Dd][Ss][Ww] eol=crlf
+# .sln - Visual Studio solution files
+*.[Ss][Ll][Nn] eol=crlf
+# .vcproj - Visual Studio project files
+*.[Vv][Cc][Pp][Rr][Oo][Jj]* eol=crlf

@@ -1,0 +1,50 @@
+# EditorConfig (is awesome): https://editorconfig.github.io
+
+# * top-most EditorConfig file
+root = true
+
+# default style settings
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 2
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# gofmt defaults
+[*.go]
+indent_style = tab
+indent_size = 4
+
+# Google JavaScript Style Guide (https://google.github.io/styleguide/javascriptguide.xml)
+[*.js]
+max_line_length = 80
+
+[*.json]
+indent_size = 4
+
+# Makefiles require tab indentation
+[{M,m,GNUM,GNUm}akefile{,.*}]
+indent_style = tab
+
+[*.{mak,mk}]
+indent_style = tab
+
+[*.md]
+trim_trailing_whitespace = false
+
+# Google Python Style Guide (https://google.github.io/styleguide/pyguide.html)
+[*.py]
+indent_size = 4
+max_line_length = 80
+
+# Windows specific settings:
+
+# Batch files require CRLF newlines
+[*.{bat,cmd,BAT,CMD}]
+end_of_line = crlf
+
+# MSVC project files require CRLF newlines
+[*.{dsp,dsw,sln,vcproj,vcprops,DSP,DSW,SLN,VCPROJ,VCPROPS}]
+end_of_line = crlf

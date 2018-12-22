@@ -1,0 +1,66 @@
+language: go
+dist: xenial
+sudo: false
+go:
+  - stable
+before_install:
+  - go get golang.org/x/lint/golint
+  - go get honnef.co/go/tools/cmd/staticcheck
+  # workaround for now:
+  - GOOS=windows go get -t -v ./...
+  - go get -t -v ./...
+jobs:
+  include:
+    - script: make all
+    - stage: Run Test Coverage
+      script: make cover
+      after_success: bash <(curl -s https://codecov.io/bash)
+    - stage: Build Release
+      script:
+        - make release
+        - echo "Deploying to GitHub releases ..."
+      deploy:
+        provider: releases
+        file:
+          - cross/go-template-darwin-amd64
+          - cross/go-template-darwin-amd64.md5
+          - cross/go-template-darwin-amd64.sha256
+          - cross/go-template-darwin-386
+          - cross/go-template-darwin-386.md5
+          - cross/go-template-darwin-386.sha256
+          - cross/go-template-freebsd-amd64
+          - cross/go-template-freebsd-amd64.md5
+          - cross/go-template-freebsd-amd64.sha256
+          - cross/go-template-freebsd-386
+          - cross/go-template-freebsd-386.md5
+          - cross/go-template-freebsd-386.sha256
+          - cross/go-template-linux-arm
+          - cross/go-template-linux-arm.md5
+          - cross/go-template-linux-arm.sha256
+          - cross/go-template-linux-arm64
+          - cross/go-template-linux-arm64.md5
+          - cross/go-template-linux-arm64.sha256
+          - cross/go-template-linux-amd64
+          - cross/go-template-linux-amd64.md5
+          - cross/go-template-linux-amd64.sha256
+          - cross/go-template-linux-386
+          - cross/go-template-linux-386.md5
+          - cross/go-template-linux-386.sha256
+          - cross/go-template-solaris-amd64
+          - cross/go-template-solaris-amd64.md5
+          - cross/go-template-solaris-amd64.sha256
+          - cross/go-template-windows-amd64.exe
+          - cross/go-template-windows-amd64.exe.md5
+          - cross/go-template-windows-amd64.exe.sha256
+          - cross/go-template-windows-386.exe
+          - cross/go-template-windows-386.exe.md5
+          - cross/go-template-windows-386.exe.sha256
+        skip_cleanup: true
+        on:
+          tags: true
+        github-token: $GITHUB_TOKEN
+        #api_key:
+          # secure:
+          # generated via:
+          # travis encrypt --com XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX --add deploy.api_key
+          # and manually moved to the above location
