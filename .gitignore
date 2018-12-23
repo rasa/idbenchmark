@@ -50,3 +50,11 @@ coverage.txt
 profile.out
 
 !go.mod
+
+local.mk
+
+LOCK
+MANIFEST
+*.db
+*.sst
+*.vlog

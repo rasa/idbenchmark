@@ -1,0 +1,42 @@
+-- schema.sql
+
+DROP DATABASE IF EXISTS idbenchmark;
+CREATE DATABASE idbenchmark;
+USE idbenchmark;
+
+DROP TABLE IF EXISTS m1;
+CREATE TABLE m1 (
+  id bigint unsigned NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (id)
+) ENGINE=MyISAM;
+
+DROP TABLE IF EXISTS m2;
+CREATE TABLE m2 (
+  id bigint unsigned NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (id)
+) ENGINE=MyISAM;
+
+DROP TABLE IF EXISTS m3;
+CREATE TABLE m3 (
+  id bigint unsigned NOT NULL
+) ENGINE=MyISAM;
+INSERT INTO m3 (id) VALUES (0);
+
+
+DROP TABLE IF EXISTS i1;
+CREATE TABLE i1 (
+  id bigint unsigned NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (id)
+) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS i2;
+CREATE TABLE i2 (
+  id bigint unsigned NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (id)
+) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS i3;
+CREATE TABLE i3 (
+  id bigint unsigned NOT NULL
+) ENGINE=InnoDB;
+INSERT INTO i3 (id) VALUES (0);
