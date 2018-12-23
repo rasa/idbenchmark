@@ -11,7 +11,7 @@ before_install:
   - go get -t -v ./...
 jobs:
   include:
-    - script: make all
+    - script: true # make all
     - stage: Run Test Coverage
       script: make cover
       after_success: bash <(curl -s https://codecov.io/bash)
@@ -59,8 +59,3 @@ jobs:
         on:
           tags: true
         github-token: $GITHUB_TOKEN
-        #api_key:
-          # secure:
-          # generated via:
-          # travis encrypt --com XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX --add deploy.api_key
-          # and manually moved to the above location
