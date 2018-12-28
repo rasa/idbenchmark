@@ -1,6 +1,6 @@
-# rasa/idbenchmark
+# idbenchmark
 
-Benchmark ID generators using Badger, Bolt, Bbolt, MySQL (ISAM & InnoDB) & Redis
+Benchmark ID generators using Badger, Bolt, Bbolt, MySQL (MyISAM & InnoDB) & Redis
 
 ## Getting Started
 
