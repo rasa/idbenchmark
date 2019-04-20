@@ -59,7 +59,7 @@ func (l *defaultLog) Warningf(f string, v ...interface{}) {
 }
 
 func badgerConnect(syncWrites bool) (db *badger.DB, err error) {
-	badger.SetLogger(defaultLogger)
+	SetLogger(defaultLogger)
 	opts := badger.DefaultOptions
 	opts.Dir = "."
 	opts.ValueDir = "."
