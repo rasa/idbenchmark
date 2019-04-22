@@ -8,8 +8,12 @@ go get github.com/rasa/idbenchmark
 
 ## Running the tests
 
+Run a MySQL instance on 127.0.0.1:3306, or set the environment variable `idbenchmark_DSN`. See [here](https://github.com/rasa/idbenchmark/blob/master/mysql_test.go#L23) for details.
+Run a Redis instance on 127.0.0.1:6379. See [here](https://github.com/rasa/idbenchmark/blob/master/redis_test.go#L15) for details.
+
 ```shell
 cd idbenchmark
+mysql < schema.sql
 make test
 ```
 
