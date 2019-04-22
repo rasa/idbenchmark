@@ -8,14 +8,16 @@ go get github.com/rasa/idbenchmark
 
 ## Running the tests
 
-Run a MySQL instance on 127.0.0.1:3306, or set the environment variable `idbenchmark_DSN`. See [here](https://github.com/rasa/idbenchmark/blob/master/mysql_test.go#L23) for details.
-Run a Redis instance on 127.0.0.1:6379. See [here](https://github.com/rasa/idbenchmark/blob/master/redis_test.go#L15) for details.
-
+1. Run a MySQL instance on 127.0.0.1:3306, or set the environment variable `idbenchmark_DSN`. See [here](https://github.com/rasa/idbenchmark/blob/master/mysql_test.go#L23) for details.
+2. Run a Redis instance on 127.0.0.1:6379. See [here](https://github.com/rasa/idbenchmark/blob/master/redis_test.go#L15) for details.
+3. Run:
 ```shell
 cd idbenchmark
 mysql < schema.sql
 make test
 ```
+
+## Test results
 
 On a Windows 7 x64 box, Intel i7-3820QM @ 2.7Ghz with RAID5 SSDs, the `GOMAXPROCS=1` results are :
 ```
